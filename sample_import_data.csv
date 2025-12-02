@@ -1,0 +1,87 @@
+<?php
+// Filename for download
+$filename = "sample_import_data.csv";
+
+// Sample data rows as associative arrays
+$data = [
+    [
+        'circuit_id' => 1,
+        'organization_name' => 'Acme Corp',
+        'customer_address' => '123 Elm St',
+        'City' => 'Springfield',
+        'contact_person_name' => 'John Doe',
+        'product_type' => 'Fiber',
+        'pop_name' => 'POP1',
+        'pop_ip' => '192.168.1.1',
+        'switch_name' => 'SwitchA',
+        'switch_ip' => '10.0.0.1',
+        'switch_port' => '1/0/24',
+        'bandwidth' => '100Mbps',
+        'circuit_status' => 'Active',
+        'vlan' => 100,
+        'installation_date' => '2025-01-15',
+        'wan_ip' => '10.10.10.2',
+        'wan_gateway' => '10.10.10.1',
+        'dns1' => '8.8.8.8',
+        'dns2' => '8.8.4.4',
+        'auth_type' => 'PAP',
+        'PPPoE_auth_username' => 'jdoe',
+        'PPPoE_auth_password' => 'pass123',
+        'cacti_url' => 'http://cacti.example.com',
+        'cacti_username' => 'jdoe_cacti',
+        'cacti_password' => 'secretpass',
+        'contact_numbers' => '555-1234,555-5678',
+        'ce_email_ids' => 'john@example.com,jdoe@acme.com',
+        'ip_addresses' => '192.168.10.1,192.168.10.2',
+    ],
+    [
+        'circuit_id' => 2,
+        'organization_name' => 'Globex Inc',
+        'customer_address' => '456 Oak St',
+        'City' => 'Shelbyville',
+        'contact_person_name' => 'Jane Smith',
+        'product_type' => 'Copper',
+        'pop_name' => 'POP2',
+        'pop_ip' => '192.168.2.1',
+        'switch_name' => 'SwitchB',
+        'switch_ip' => '10.0.1.1',
+        'switch_port' => '2/0/12',
+        'bandwidth' => '50Mbps',
+        'circuit_status' => 'Inactive',
+        'vlan' => 200,
+        'installation_date' => '2025-02-15',
+        'wan_ip' => '10.10.20.2',
+        'wan_gateway' => '10.10.20.1',
+        'dns1' => '1.1.1.1',
+        'dns2' => '1.0.0.1',
+        'auth_type' => 'CHAP',
+        'PPPoE_auth_username' => 'jsmith',
+        'PPPoE_auth_password' => 'pass456',
+        'cacti_url' => 'http://cacti.globex.com',
+        'cacti_username' => 'jsmith_cacti',
+        'cacti_password' => 'secret456',
+        'contact_numbers' => '555-8765',
+        'ce_email_ids' => 'jane@globex.com',
+        'ip_addresses' => '192.168.20.1',
+    ],
+];
+
+// Set headers to force download
+header('Content-Type: text/csv');
+header('Content-Disposition: attachment; filename="' . $filename . '"');
+header('Pragma: no-cache');
+header('Expires: 0');
+
+// Open output stream
+$output = fopen('php://output', 'w');
+
+// Output column headers (keys of the first row)
+fputcsv($output, array_keys($data[0]));
+
+// Output data rows
+foreach ($data as $row) {
+    fputcsv($output, $row);
+}
+
+fclose($output);
+exit;
