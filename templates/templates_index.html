@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNMP Monitoring</title>
+</head>
+<body>
+    <h1>SNMP Monitoring Tool</h1>
+    <form method="POST">
+        <label for="target">Target Device:</label>
+        <input type="text" id="target" name="target" required><br><br>
+        <label for="community">SNMP Community:</label>
+        <input type="text" id="community" name="community" value="public" required><br><br>
+        <label for="oid">OID:</label>
+        <input type="text" id="oid" name="oid" required><br><br>
+        <label for="interval">Polling Interval (seconds):</label>
+        <input type="number" id="interval" name="interval" value="5" required><br><br>
+        <label for="duration">Duration (polls):</label>
+        <input type="number" id="duration" name="duration" value="12" required><br><br>
+        <button type="submit">Start Monitoring</button>
+    </form>
+    {% if graph %}
+        <h2>SNMP Data Graph</h2>
+        <img src="{{ graph }}" alt="Graph">
+    {% endif %}
+</body>
+</html>
