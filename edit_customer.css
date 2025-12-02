@@ -1,0 +1,4 @@
+body { font-size: 13px; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+.card { padding: 10px 15px; margin-bottom: 12px; border-radius: 6px; }
+.input-group .form-control { height: 30px; }
+input.is-invalid { border-color: #dc3545 !important; background-color: #fff6f6 !important; }

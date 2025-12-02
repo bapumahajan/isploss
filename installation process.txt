@@ -1,0 +1,3 @@
+sudo dnf install php php-cli php-mbstring php-xml unzip curl
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer

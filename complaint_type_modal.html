@@ -1,0 +1,32 @@
+<!-- Modal for managing complaint types -->
+<div class="modal fade" id="manageComplaintTypeModal" tabindex="-1" aria-labelledby="manageComplaintTypeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="addEditComplaintTypeForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="manageComplaintTypeLabel">Manage Complaint Types</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-2 d-flex">
+            <input type="text" class="form-control form-control-sm" name="fault_name" id="faultTypeName" placeholder="New Type Name" required>
+            <button type="submit" class="btn btn-success btn-sm ms-2" id="saveTypeBtn">Add</button>
+          </div>
+          <table class="table table-sm mb-0" id="complaintTypeTable">
+            <thead>
+              <tr>
+                <th>Type Name</th>
+                <th style="width:70px;">Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Button to open modal -->
+<button class="btn btn-outline-primary btn-sm mb-2" style="float:right;" data-bs-toggle="modal" data-bs-target="#manageComplaintTypeModal">
+  <i class="bi bi-wrench"></i> Manage Complaint Types
+</button>
