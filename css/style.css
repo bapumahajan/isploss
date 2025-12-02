@@ -1,0 +1,42 @@
+/* File: assets/css/style.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.dashboard-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 12px;
+  margin: 5px;
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Custom mobile-friendly layout */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 1 1 100%;
+  }
+}
+.wrap-text {
+    white-space: normal !important;
+    word-break: break-word; /* Break long words if needed */
+    max-width: 200px; /* Optional: Limit the width so it wraps nicely */
+}

@@ -1,0 +1,24 @@
+/* Example: Change the background color of the navbar */
+.navbar-custom {
+    background-color: #0056b3 !important; /* A darker blue */
+}
+
+/* Example: Adjust padding of navbar links */
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem !important; /* Adjust vertical and horizontal padding */
+}
+
+/* Example: Style the active link differently */
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 5px;
+}
+
+/* Example: Force links to be on a single line (if wrapping) */
+.navbar-nav {
+    flex-wrap: nowrap !important;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 0.5rem; /* Add some spacing between items */
+}
